@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML GUIDE</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Verdana', sans-serif;
+            color: #fff;
+            background-color: #1e1e2f;
+            overflow-x: hidden;
+        }
+
+        /* Sidebar Navigation */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100vh;
+            background-color: #12122b;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            padding-top: 50px;
+            transition: left 0.3s ease-in-out;
+            z-index: 1000;
+        }
+        .nav-container a {
+            color: #00d4ff;
+            padding: 15px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 5px;
+            margin: 10px 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .nav-container a:hover {
+            background-color: #00d4ff;
+            color: #12122b;
+        }
+
+        /* Navigation Toggle Button */
+        .nav-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #00d4ff;
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-toggle:before {
+            content: "☰";
+            font-size: 1.5rem;
+            color: #12122b;
+        }
+
+        /* Open Menu State */
+        .nav-open .nav-container {
+            left: 0;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 20px;
+            margin-left: 0;
+            transition: margin-left 0.3s ease-in-out;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #141432;
+            text-align: center;
+            padding: 2em 1em;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            color: #00d4ff;
+            text-shadow: 0 0 10px #00d4ff;
+            margin-bottom: 0.5em;
+        }
+        header p {
+            font-size: 1.2rem;
+            color: #c9c9d9;
+        }
+
+        /* Tutorial Section */
+        .tutorial-container {
+            padding: 20px;
+            margin-bottom: 20px;
+            background-color: #2e2e44;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+        }
+        .tutorial-container h2 {
+            font-size: 2rem;
+            margin-bottom: 1em;
+            color: #00d4ff;
+            text-align: center;
+        }
+        .tutorial-container .code-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+        .tutorial-container textarea {
+            width: 48%;
+            height: 300px;
+            font-family: monospace;
+            font-size: 1rem;
+            padding: 10px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background-color: #1b1b30;
+            color: #d1d1e1;
+            resize: none;
+        }
+        .tutorial-container iframe {
+            width: 48%;
+            height: 300px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background-color: #12122b;
+        }
+        .tutorial-container button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #00d4ff;
+            color: #12122b;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .tutorial-container button:hover {
+            background-color: #00a3cc;
+        }
+
+        /* Footer Section */
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #c9c9d9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .tutorial-container textarea, .tutorial-container iframe {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <button class="nav-toggle" onclick="toggleNav()"></button>
+    <div class="nav-container">
+        <a href="#HOME">Home</a>
+        <a href="berc.html">Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header Section -->
+        <header>
+            <h1>HTML Guide</h1>
+            <p>Interactive tutorials for learning HTML</p>
+        </header>
+
+        <!-- Tutorials Section -->
+        <div class="tutorial-container">
+            <h2>HTML Lists</h2>
+            <div class="code-container">
+                <textarea id="html-lists">
+<!DOCTYPE html>
+<html>
+<body>
+<h2>HTML Lists</h2>
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+</body>
+</html>
+                </textarea>
+                <iframe id="output-lists"></iframe>
+            </div>
+            <button onclick="runLists()">Run Code</button>
+        </div>
+
+        <div class="tutorial-container">
+            <h2>HTML Symbols</h2>
+            <div class="code-container">
+                <textarea id="html-symbols">
+<!DOCTYPE html>
+<html>
+<body>
+<h2>HTML Symbols</h2>
+<p>&amp; represents &</p>
+<p>&lt; represents <</p>
+<p>&gt; represents ></p>
+</body>
+</html>
+                </textarea>
+                <iframe id="output-symbols"></iframe>
+            </div>
+            <button onclick="runSymbols()">Run Code</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 HTML Guide | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function toggleNav() {
+            document.body.classList.toggle("nav-open");
+        }
+
+        function runLists() {
+            const htmlCode = document.getElementById("html-lists").value;
+            document.getElementById("output-lists").srcdoc = htmlCode;
+        }
+
+        function runSymbols() {
+            const htmlCode = document.getElementById("html-symbols").value;
+            document.getElementById("output-symbols").srcdoc = htmlCode;
+        }
+        
+        function runLists() {
+        const htmlCode = document.getElementById("html-lists").value;
+        document.getElementById("output-lists").srcdoc = `
+        <style>
+            body { 
+                color: white; 
+                background-color: #1e1e2f; 
+                font-family: Arial, sans-serif; 
+                padding: 20px;
+            }
+        </style>
+        ${htmlCode}`;
+    }
+
+    function runSymbols() {
+        const htmlCode = document.getElementById("html-symbols").value;
+        document.getElementById("output-symbols").srcdoc = `
+        <style>
+            body { 
+                color: white; 
+                background-color: #1e1e2f; 
+                font-family: Arial, sans-serif; 
+                padding: 20px;
+            }
+        </style>
+        ${htmlCode}`;
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact about alata</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Verdana', sans-serif;
+            color: #fff;
+            background-color: #1e1e2f;
+            overflow-x: hidden;
+        }
+
+        /* Sidebar Navigation */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100vh;
+            background-color: #12122b;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            padding-top: 50px;
+            transition: left 0.3s ease-in-out;
+            z-index: 1000;
+        }
+        .nav-container a {
+            color: #00d4ff;
+            padding: 15px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 5px;
+            margin: 10px 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .nav-container a:hover {
+            background-color: #00d4ff;
+            color: #12122b;
+        }
+
+        /* Navigation Toggle Button */
+        .nav-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #00d4ff;
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-toggle:before {
+            content: "☰";
+            font-size: 1.5rem;
+            color: #12122b;
+        }
+
+        /* Open Menu State */
+        .nav-open .nav-container {
+            left: 0;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 20px;
+            margin-left: 0;
+            transition: margin-left 0.3s ease-in-out;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #141432;
+            text-align: center;
+            padding: 2em 1em;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            color: #00d4ff;
+            text-shadow: 0 0 10px #00d4ff;
+            margin-bottom: 0.5em;
+        }
+        header p {
+            font-size: 1.2rem;
+            color: #c9c9d9;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            padding: 20px;
+            background-color: #2e2e44;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
+            margin-bottom: 20px;
+        }
+        .contact-container h2 {
+            font-size: 2rem;
+            margin-bottom: 1em;
+            color: #00d4ff;
+            text-align: center;
+        }
+        .contact-container p {
+            font-size: 1.1rem;
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        .contact-container span {
+            font-weight: bold;
+            color: #00d4ff;
+        }
+
+        /* Footer Section */
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #c9c9d9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <button class="nav-toggle" onclick="toggleNav()"></button>
+    <div class="nav-container">
+        <a href="ber.html">Home</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header Section -->
+        <header>
+            <h1>Contact Information</h1>
+            <p>Get to know more about the creator of this website</p>
+        </header>
+
+        <!-- Contact Information Section -->
+        <div class="contact-container">
+            <h2>The Owner Of This Website</h2>
+            <p><span>Name:</span> Jay-van C. Alata</p>
+            <p><span>Birthdate:</span> 5/31/2007</p>
+            <p><span>Email:</span> alatajvan@gmail.com</p>
+        </div>
+
+        <!-- Reflection Section -->
+        <div class="contact-container">
+            <h2>Reflection</h2>
+            <p>
+                Creating this website has been a challenging journey. It challenged my creativity and problem-solving skills, especially in implementing responsive designs and navigation.
+            </p>
+            <p>
+                Through this peta, I improved my knowledge of HTML, CSS, and JavaScript, focusing on accessibility and aesthetics.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 HTML Guide | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function toggleNav() {
+            document.body.classList.toggle("nav-open");
+        }
+    </script>
+</body>
+</html>
